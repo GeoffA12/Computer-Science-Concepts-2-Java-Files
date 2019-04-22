@@ -1,0 +1,310 @@
+Geoff Arroyo
+Assignment 1
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+package asg1;
+import java.util.Scanner;
+public class Asg1Part1 {
+	final static Scanner userInput = new Scanner(System.in);
+	public static void main(String[] args) 
+	{
+		//final Scanner userInput = new Scanner(System.in);
+		int age; double gpa; String homeTown;
+		
+		System.out.println("Please enter your age: ");
+		age = userInput.nextInt();	
+		userInput.nextLine();
+		if (age >= 18) {
+			System.out.println("You're old enough to vote.");
+		}
+		else {
+			System.out.println("You're not old enough to vote.");
+		}
+		
+		if (age >= 35) {
+			System.out.println("You're old enough to be the president.");
+		}
+		else {
+			System.out.println("You're not old enough to be the president.");
+		}
+		
+		if (age >= 65) {
+			System.out.println("You're old enough to receive medical benefits.");
+		}
+		else {
+			System.out.println("You're not old enough to receive medical benefits.");
+		}
+		
+		if (age >= 16 && age <= 25) {
+			System.out.println("You're paying extra for car insurance.");
+		}
+		else {
+			System.out.println("You're not paying for extra car insurance.");
+		}
+		
+		System.out.println("Please enter your gpa: ");
+		gpa = userInput.nextDouble();
+		userInput.nextLine();
+		if (gpa < 0.0 || gpa > 4.0) {
+			System.out.println("Error. Your gpa input wasn't valid.");
+		}
+		else {
+			if (gpa >= 3.25) {
+				System.out.println("You're eligible for the Dean's List.");
+			}
+			else {
+				System.out.println("You're not eligible for the Dean's List.");
+			}
+			
+			if (gpa < 2.0) {
+				System.out.println("You are under probationary status.");
+			}
+			else {
+				System.out.println("You aren't under probationary status.");
+			}
+			
+			if (gpa >= 2.5) {
+				System.out.println("Your gpa is satisfactory.");
+			}
+			else {
+				System.out.println("Your gpa isn't satisfactory.");
+			}
+		}
+		System.out.println("Please enter your hometown: ");
+		homeTown = userInput.nextLine();
+		
+		System.out.println("Welcome! Your home town is: " + homeTown);
+		String upperTown = homeTown.toUpperCase();
+		System.out.println(upperTown);
+		int len = homeTown.length();
+		System.out.println("Here are the number of characters in your home town: " + len);
+		
+	}
+
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Please enter your age: 
+21
+You're old enough to vote.
+You're not old enough to be the president.
+You're not old enough to receive medical benefits.
+You're paying extra for car insurance.
+Please enter your gpa: 
+4.0
+You're eligible for the Dean's List.
+You aren't under probationary status.
+Your gpa is satisfactory.
+Please enter your hometown: 
+Port Chester
+Welcome! Your home town is: Port Chester
+PORT CHESTER
+Here are the number of characters in your home town: 12
+
+Please enter your age: 
+65
+You're old enough to vote.
+You're old enough to be the president.
+You're old enough to receive medical benefits.
+You're not paying for extra car insurance.
+Please enter your gpa: 
+2.4
+You're not eligible for the Dean's List.
+You aren't under probationary status.
+Your gpa isn't satisfactory.
+Please enter your hometown: 
+New York
+Welcome! Your home town is: New York
+NEW YORK
+Here are the number of characters in your home town: 8
+
+Please enter your age: 
+25
+You're old enough to vote.
+You're not old enough to be the president.
+You're not old enough to receive medical benefits.
+You're paying extra for car insurance.
+Please enter your gpa: 
+4.5
+Error. Your gpa input wasn't valid.
+Please enter your hometown: 
+Los Angeles
+Welcome! Your home town is: Los Angeles
+LOS ANGELES
+Here are the number of characters in your home town: 11
+
+Please enter your age: 
+16
+You're not old enough to vote.
+You're not old enough to be the president.
+You're not old enough to receive medical benefits.
+You're paying extra for car insurance.
+Please enter your gpa: 
+2.0
+You're not eligible for the Dean's List.
+You aren't under probationary status.
+Your gpa isn't satisfactory.
+Please enter your hometown: 
+Houston
+Welcome! Your home town is: Houston
+HOUSTON
+Here are the number of characters in your home town: 7
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+package asg1;
+
+public class Asg1Part2 {
+
+	public static void main(String[] args) {
+		int sum = 0;
+		for (int x = 1; x < 101; x++) {
+			sum += x;
+		}
+		System.out.println("Here is the sum from 1-100: " + sum);
+		int sum2 = 0;
+		for (int i = 1; i < 2001; i++) {
+			if (i % 13 == 0) {
+				sum2 += i;
+			}
+		}
+		System.out.println("Here is the sum of integers from 1-2000 that are evenly divisible by 13: " + sum2);
+		
+		int sumOfSquares = 0;
+		for (int s = 1; s < 51; s++) {
+			sumOfSquares += (s*s);
+		}
+		System.out.println("Here is the sum of squares from 1 to 50: " + sumOfSquares);
+		
+	}
+
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Here is the sum from 1-100: 5050
+Here is the sum of integers from 1-2000 that are evenly divisible by 13: 153153
+Here is the sum of squares from 1 to 50: 42925
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+package asg1;
+import java.util.Scanner;
+public class Asg1Part3 {
+	final static Scanner userInput = new Scanner(System.in);
+	public static void main(String[] args) {
+		boolean n;
+		int userChoice;
+		System.out.println("Please enter an integer: ");
+		userChoice = userInput.nextInt();
+		userInput.nextLine();
+		n = isOdd(userChoice);
+		if (n == true) {
+			System.out.println("Your input of " + userChoice + " is odd.");
+		}
+		else {
+			System.out.println("Your input of " + userChoice + " is even.");
+		}
+		
+		
+	}
+	
+	public static boolean isOdd(int number) {
+		if (number % 2 != 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Please enter an integer: 
+13
+Your input of 13 is odd.
+
+Please enter an integer: 
+-2
+Your input of -2 is even.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+package asg1;
+import java.util.Scanner;
+public class Asg1Part3 {
+	final static Scanner userInput = new Scanner(System.in);
+	public static void main(String[] args) {
+		//boolean n;
+		String message;
+		int userChoice;
+		System.out.println("Please enter your credit hours: ");
+		userChoice = userInput.nextInt();
+		userInput.nextLine();
+		message = getUniversityClass(userChoice);
+		System.out.println(message);
+		/*if (n == true) {
+			System.out.println("Your input of " + userChoice + " is odd.");
+		}
+		else {
+			System.out.println("Your input of " + userChoice + " is even.");
+		}*/
+		
+		
+	}
+	
+	public static boolean isOdd(int number) {
+		if (number % 2 != 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public static String getUniversityClass(int creditHours) {
+		if (creditHours < 0) {
+			return "No Classification";
+		}
+		else if (creditHours < 30) {
+			return "Freshman";
+		}
+		else if (creditHours < 60) {
+			return "Sophomore";
+		}
+		else if (creditHours < 90) {
+			return "Junior";
+		}
+		else {
+			return "Senior";
+		}
+	}
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Please enter your credit hours: 
+-2
+No Classification
+
+Please enter your credit hours: 
+29
+Freshman
+
+Please enter your credit hours: 
+40
+Sophomore
+
+Please enter your credit hours: 
+60
+Junior
+
+Please enter your credit hours: 
+90
+Senior
+
+Please enter your credit hours: 
+125
+Senior
